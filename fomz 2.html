@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit House Listing - Eswatini Airbnb</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Edit House <span>Listing</span></h2>
+    <form action="/edit_listing" method="post" enctype="multipart/form-data">
+        <label for="listing_id">Select Listing to Edit:</label><br>
+        <select id="listing_id" name="listing_id" required>
+            <!-- Options should be populated dynamically with listings from the database -->
+            <option value="">Choose a listing...</option>
+            <option value="1">Listing 1</option>
+            <option value="2">Listing 2</option>
+            <!-- Add more options as necessary -->
+        </select><br>
+        
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br>
+        
+        <label for="video">Video (from phone storage):</label><br>
+        <input type="file" id="video" name="video" accept="video/*" onchange="showVideoPreview(this)"><br>
+        <div class="preview" id="videoPreview"></div>
+        
+        <label for="pictures">Pictures (from phone storage):</label><br>
+        <input type="file" id="pictures" name="pictures" accept="image/*" multiple onchange="showImagePreviews(this)"><br>
+        <div class="preview" id="imagePreview"></div>
+        
+        <label for="description">House Description:</label><br>
+        <textarea id="description" name="description" rows="4" required></textarea><br>
+        
+        <label for="location">Location (Google Maps):</label><br>
+        <input type="text" id="location" name="location" required><br>
+        
+        <label for="price">Price:</label><br>
+        <input type="number" id="price" name="price" required><br>
+        
+        <label for="contact">Contact Details:</label><br>
+        <input type="text" id="contact" name="contact" required><br>
+        
+        <input type="submit" value="Save Changes">
+    </form>
+    
+    <button> <a href="the dashboard.html"><h2><span>Back</span></h2></a></button>
+    <style>
+    <style>
+  h2 span { 
+    color: #c0392b;
+  }
+body {
+    background-color: #ffffff; /* White background */
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h2 {
+    color: #333333; /* Darker text for the heading */
+}
+
+form {
+    background-color: #f9f9f9; /* Slightly off-white form background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical; /* Allows vertical resizing only */
+}
+
+input[type="submit"] {
+    background-color: #ff0000; /* Red buttons */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}
+        .preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .preview img, .preview video {
+            max-width: 150px;
+            max-height: 150px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+    </style>
+
+
+    <script src="form1.js"></script> <!-- Reuse the same JS for image and video previews -->
+</body>
+</html>

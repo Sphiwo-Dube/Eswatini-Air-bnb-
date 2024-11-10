@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>House-details-page</title>
+</head>
+<body>
+  
+  <div class="container">
+    <h1>Info</h1>
+    <div class="box">
+        <h2>About The House</h2>
+    </div>
+    <div class="box">
+        <h2>More Pictures</h2>
+    </div>
+    <div class="box">
+        <h2>House Measurements </h2>
+    </div>
+    <div class="box">
+        <h2>Owner Details</h2>
+    </div>
+    <div class="box">
+        <h2>All contant details</h2>
+    </div>
+</div>
+<script>
+    var backBtn = document.querySelector(".back-btn");
+   window.addEventListener("scroll", function() {
+       if (this.pageYOffset > 100) {
+           backBtn.classList.add("active");
+       } else {
+           backBtn.classList.remove("active");
+       }
+   });
+   backBtn.addEventListener("click", function() {
+       window.scrollTo({
+           top: 0,
+           behavior: 'smooth'
+       })
+   })
+</script>
+  <style>
+  h2  {
+                color: #c0392b;
+        }
+  h1 { 
+                color: #c0392b;
+        }
+  
+   .container {
+            background-color:#fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+.box {
+    width: 100%;
+    height: 400px;
+    background: #fff;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    margin: 20px auto;
+}
+
+.back-btn {
+    position: fixed;
+    bottom: 20px;
+    right: -100%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    z-index: 5;
+    box-shadow: 3px 3px 5px rgb(0, 0, 0, .4);
+    border-radius: 50%;
+    font-size: 14px;
+    transition: all .4s;
+}
+
+.back-btn.active {
+    right: 20px;
+}
+  .btn {
+            padding: 10px 20px;
+            background-color:#c0392b ;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+
+        .btn:hover {
+            background-color: #333;
+        }
+
+  </style>
+  <button class="btn" type="button" onclick="document.location='home page.html'">Back</button>
+     
+</body>
+</html>
